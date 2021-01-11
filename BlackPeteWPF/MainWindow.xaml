@@ -1,0 +1,38 @@
+﻿<Window x:Class="BlackPeteWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackPeteWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="grid_MainContent">
+        <DockPanel LastChildFill="False">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF455544"/>
+                    <GradientStop Color="#FF3C7E35" Offset="0.843"/>
+                    <GradientStop Color="#FF4A9542" Offset="0.117"/>
+                    <GradientStop Color="#FF425342" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+
+            <Grid DockPanel.Dock="Top" Name="grid_Ai">
+                <Label HorizontalAlignment="Left" Background="White" Name="lbl_AiLbl">Pair amount and Ai name</Label>
+                <DockPanel HorizontalAlignment="Center" Name="panel_AiCards">
+
+                </DockPanel>
+            </Grid>
+
+            <Grid DockPanel.Dock="Bottom" Name="grid_Player">
+                <Label HorizontalAlignment="Left" Background="White" Name="lbl_PlayerLbl">Pair amount and player name</Label>
+                <Button HorizontalAlignment="Right" Name="btn_PlayerConfirm" Opacity="60">Confirm Button</Button>
+                <DockPanel HorizontalAlignment="Center" Name="panel_PlayerCards"></DockPanel>
+            </Grid>
+
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="panel_MiddleContent">
+            <Button Click="ClickStart" Name="btn_ConfirmChoice">Start game</Button>
+        </DockPanel>
+    </Grid>
+</Window>
