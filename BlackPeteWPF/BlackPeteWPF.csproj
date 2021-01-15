@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TestLogger.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +64,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BlackPeteGame.cs" />
+    <Compile Include="BlackPeteGameWpf.cs" />
+    <Compile Include="BlackPetePlayer.cs" />
+    <Compile Include="CardGame.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardFactory.cs" />
+    <Compile Include="Cards\ICard.cs" />
+    <Compile Include="Cards\PlayingCardImg.cs" />
+    <Compile Include="IDealCards.cs" />
+    <Compile Include="IExcludeFromList.cs" />
+    <Compile Include="ILIstExtension.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cards\PlayingCard.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -93,6 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,20 +19,35 @@
 
             <Grid DockPanel.Dock="Top" Name="grid_Ai">
                 <Label HorizontalAlignment="Left" Background="White" Name="lbl_AiLbl">Pair amount and Ai name</Label>
-                <DockPanel HorizontalAlignment="Center" Name="panel_AiCards">
-
-                </DockPanel>
+                <ListView HorizontalAlignment="Center" Name="panel_AiCards" VerticalAlignment="Center">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" IsItemsHost="True" VerticalAlignment="Top"></StackPanel>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+                </ListView>
             </Grid>
 
             <Grid DockPanel.Dock="Bottom" Name="grid_Player">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <ItemsControl Name="listBox_PlayerCards" Grid.IsSharedSizeScope="True">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"></StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
                 <Label HorizontalAlignment="Left" Background="White" Name="lbl_PlayerLbl">Pair amount and player name</Label>
-                <Button HorizontalAlignment="Right" Name="btn_PlayerConfirm" Opacity="60">Confirm Button</Button>
-                <DockPanel HorizontalAlignment="Center" Name="panel_PlayerCards"></DockPanel>
+                <Button HorizontalAlignment="Right" Name="btn_PlayerConfirm" Opacity="60" Click="btn_PlayerConfirm_Click">Confirm Button</Button>
             </Grid>
 
         </DockPanel>
         <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Name="panel_MiddleContent">
-            <Button Click="ClickStart" Name="btn_ConfirmChoice">Start game</Button>
+            <Button Click="ClickStart" Name="btn_StartGame">Start game</Button>
+            <ListBox x:Name="listBox_CardChoosing">
+
+            </ListBox>
         </DockPanel>
     </Grid>
 </Window>
